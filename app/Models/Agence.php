@@ -1,0 +1,22 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+
+class Agence extends Model
+{
+    use HasFactory;
+
+    public function agents(): HasMany
+    {
+        return $this->hasMany(Agent::class);
+    }
+
+    public function paiements(): HasMany
+    {
+        return $this->hasMany(Paiement::class);
+    }
+}
